@@ -30,7 +30,12 @@ function init() {
       var PANEL = d3.select("#sample-metadata");
   
       PANEL.html("");
-      PANEL.append("h6").text(result.location);
+
+      // from starter code
+      Object.entries(result).forEach(([key, value]) => { //prototype
+        PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);
+      });
+
     });
   }
 
